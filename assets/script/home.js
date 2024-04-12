@@ -77,6 +77,8 @@ function saveUsersNames(users) {
             imgList[count].innerHTML = `<img src=${users[i].picture.medium} alt="pfp">` + imgList[count].innerHTML;
             count++;
         }
+        else
+            buildPerson(users[i]);
     }
 }
 
@@ -101,3 +103,19 @@ async function getUsers(endpoint) {
     }
 }
 getUsers(URL);
+
+const people = document.querySelector('.people');
+
+function buildPerson(person) {
+    let html = `
+        <div class="person">
+            <img src=${person.picture.medium}>
+            <div class="person-text">
+                <h4>${person.name.first} ${person.name.last}</h5>
+                <p>${person.location.city}</p>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+        </div>
+    `;
+    people.innerHTML += html;
+}

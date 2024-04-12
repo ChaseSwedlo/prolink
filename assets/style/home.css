@@ -322,16 +322,84 @@ main {
     background-color: rgb(221, 223, 228);
 }
 
-.feed {
-    width: 48%;
-}
-
 aside {
     width: 26%;
-    height: 80dvh;
+    height: 655px;
     background-color: var(--header-color);
     border-radius: var(--radius);
     box-shadow: var(--box-shadow);
+}
+
+aside h2 {
+    text-align: center;
+    font-size: 17px;
+    font-size: 400;
+    line-height: 55px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.139);
+}
+
+.people {
+    width: 100%;
+}
+
+.person {
+    display: flex;
+    position: relative;
+    height: 60px;
+    padding: 11px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.139);
+}
+
+.person:last-of-type {
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.person img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.person-text h4 {
+    padding: 3px 0 4px 0;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 500;
+    opacity: 0.9;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+.person h4:hover {
+    text-decoration: underline;
+    opacity: 0.7;
+}
+
+.person-text p {
+    font-size: 11.5px;
+    line-height: 1;
+    user-select: none;
+    opacity: 0.6;
+    padding-left: 1px;
+}
+
+.person i {
+    color: var(--main-color);
+    padding-top: 12px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    position: absolute;
+    right: 24px;
+}
+
+.person i:hover {
+    opacity: 0.6;
+}
+
+/*Feed*/
+.feed {
+    width: 48%;
 }
 
 textarea {
