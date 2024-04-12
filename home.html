@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Chase Swedlo">
+        <meta name="description" content="ProLink">
+        <meta name="keywords" content="html, css, web, web development">
+        <title>ProLink</title>
+        <link rel="icon" href="./assets/media/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+        <link rel="stylesheet" href="./assets/style/home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="./assets/script/home.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="container flex sb gap">
+                <div class="logo flex">
+                    <h1>PL</h1>
+                    <input type="text" placeholder="Search ProLink">
+                </div>
+                <nav class="flex sb">
+                    <div class="active">
+                        <i class="fa-solid fa-house"></i>
+                        <div class="underline"></div>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+                </nav>
+                <div class="profile flex sb">
+                    <div class="notis">
+                        <i class="fa-solid fa-bell"></i>
+                        <div class="alert"></div>
+                    </div>
+                    <div class="stats">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <div class="pfp-box flex">
+                        <figure>
+                            <img src='./assets/media/pfp1.jpg' alt="pfp">
+                        </figure>
+                        <p>James</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container gap flex">
+                <section class="profile-section">
+
+                </section>
+                <div class="feed">
+                    <textarea 
+                        maxlength ="430" class="text-area" placeholder="What's happening?"
+                    ></textarea>
+                    <div class="textarea-buttons">
+                        <div class="img-input flex">
+                            <label for="file-input">
+                                <i class="fa-regular fa-image"></i>
+                            </label>
+                            <input type="file" id="file-input" accept="image/*">
+                            <p class="file-name"></p>
+                        </div>
+                        <div class="button">
+                            <button class="post-button">Post</button>
+                        </div>
+                    </div>
+                    <div class="post-feed">
+                        <div class="post">
+                            <div class="post-title">
+                                <div class="post-pfp one">
+                                    <h3 class="init-post-name"></h3>
+                                </div>
+                                <p>May 12, 2023</p>
+                            </div>
+                            <p class="post-text">
+                                My new project team is about to embark on an exciting 
+                                journey, bringing together diverse talents to drive 
+                                exceptional results!
+                            </p>
+                            <img class="post-img" src="./assets/media/post0img.jpg">
+                        </div>
+                        <div class="post">
+                            <div class="post-title">
+                                <div class="post-pfp two">
+                                    <h3 class="init-post-name-two"></h3>
+                                </div>
+                                <p>Apr 28, 2023</p>
+                            </div>
+                            <p class="post-text">
+                                I am thrilled to unveil my innovative new project 
+                                that will bring transformative solutions to the table!
+                            </p>
+                            <img class="post-img" src="./assets/media/post1img.jpg">
+                        </div>
+                    </div>
+                </div>
+                <aside>
+    
+                </aside>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </body>
+</html>

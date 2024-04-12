@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+:root {
+    --background: rgb(252, 252, 254);
+    --font-color: rgb(0, 0, 3);
+    --off-white: rgb(242, 242, 248);
+    --header-height: 65px;
+    --main-color: #0080ff;
+    --footer-text: rgba(0, 0, 0, 0.607);
+    --box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.018);
+    --or-color: rgba(0, 0, 0, 0.502);
+}
+
+.container {
+    width: min(100% - 40px, 1080px);
+    margin-inline: auto;
+}
+
+body {
+    background-color: var(--background);
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--font-color);
+}
+
+.center {
+    display: grid;
+    place-items: center ;
+}
+
+.flex {
+    display: flex;
+}
+
+.sb {
+    justify-content: space-between;
+}
+
+/*Main*/
+main {
+    display: flex;
+}
+
+section {
+    width: 50%;
+    height: 100svh;
+}
+
+section:first-of-type {
+    background-image: url(../media/indexbg2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.login {
+    display: grid;
+    place-items: center;
+}
+
+.login form {
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    font-size: 46px;
+    margin-bottom: 18px;
+    color: rgba(0, 0, 0, 0.7);
+    user-select: none;
+    span {
+        color: var(--main-color);
+    }
+}
+
+.or {
+    width: 100%;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.or p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 0 15px;
+    user-select: none;
+    color: var(--or-color);
+}
+
+.line {
+    background-color: var(--or-color);
+    opacity: 0.4;
+    height: 1px;
+    width: 132px;
+    margin-top: 12px;
+}
+
+input[type=text] {
+    width: 400px;
+    font-size: 17px;
+    border-radius: 6px;
+    padding: 0 15px;
+    height: 52px;
+    border: 1.2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
+    transition-duration: 0.2;
+}
+
+input[type=text]:last-of-type {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.login-button {
+    width: 400px;
+    height: 52px;
+    background-color: var(--main-color);
+    border-radius: 6px;
+    color: white;
+    font-size: 17px;
+    transition-duration: 0.22s;
+    font-weight: 500;
+    box-shadow: var(--box-shadow);
+}
+
+.login-button:hover {
+    background-color: #0066ff;
+}
+
+.login-button:active {
+    background-color: #0051cb;
+}
+
+.other button {
+    width: 126px;
+    background-color: var(--background);
+    border: 1.5px solid black;
+    border-radius: 6px;
+    height: 42px;
+    font-size: 20px;
+    transition-duration: 0.2s;
+}
+
+.other button + button {
+    margin-left: 11px;
+}
+
+.other button:hover {
+    color:var(--main-color);
+    background-color: #2b5ce417;
+    border-color: #0b1f5674;
+}
