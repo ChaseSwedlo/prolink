@@ -8,8 +8,10 @@
     --header-height: 84px;
     --main-color: rgb(0, 128, 255);
     --footer-text: rgba(0, 0, 0, 0.607);
+    --input-bg-color: rgb(233, 235, 243);
     --box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.017);
     --radius: 6px;
+    --footer-height: 180px;
 }
 
 .container {
@@ -69,7 +71,7 @@ header {
     padding-left: 31px;
     background-size: 16px;
     border-radius: 21px;
-    background-color: rgb(233, 235, 243);
+    background-color: var(--input-bg-color);
     border: 1px solid rgba(0, 0, 0, 0.02);
     font-size: 13px;
 }
@@ -85,11 +87,12 @@ header {
 }
 
 .pfp-box {
-    background-color: rgb(233, 235, 243);
+    background-color: var(--input-bg-color);
     border: 1px solid rgba(0, 0, 0, 0.02);
     height: 38px;
     border-radius: 21px;
     margin-top: 23px;
+    user-select: none;
 }
 
 .pfp-box p {
@@ -113,7 +116,7 @@ header {
     height: 38px;
     margin-top: 23px;
     width: 38px;
-    background-color: rgb(233, 235, 243);
+    background-color: var(--input-bg-color);
     border: 1px solid rgba(0, 0, 0, 0.02);
     border-radius: 50%;
     i {
@@ -134,8 +137,8 @@ header {
     background-color: rgb(255, 0, 0);
     border-radius: 50%;
     position: absolute;
-    top: 11px;
-    right: 11px;
+    top: 12px;
+    right: 9px;
 }
 
 .notis, .stats, .pfp-box {
@@ -184,7 +187,7 @@ nav div:active {
 
 .active {
     position: relative;
-    background-color: rgb(233, 235, 243);
+    background-color: var(--input-bg-color);
     border: 1px solid rgba(0, 0, 0, 0.007);
 }
 
@@ -319,7 +322,7 @@ main {
 }
 
 .profile-section button {
-    background-color: rgb(233, 235, 243);
+    background-color: var(--input-bg-color);
     color: var(--main-color);
     height: 40px;
     font-size: 15px;
@@ -388,12 +391,11 @@ aside h2 {
 
 .person h4:hover {
     text-decoration: underline;
-    opacity: 0.7;
 }
 
 .person h4:active {
     text-decoration: underline;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .person-text p {
@@ -506,7 +508,7 @@ label:hover {
 }
 
 label:active {
-    color: rgba(255, 255, 255, 0.349);
+    color: rgba(88, 88, 88, 0.349);
 }
 
 /*Posts*/
@@ -573,10 +575,9 @@ label:active {
 }
 
 /*Footer*/
-
 footer {
     background-color: rgb(253, 253, 255);
-    height: 180px;
+    height: var(--footer-height);
     width: 100%;
 }
 
@@ -587,7 +588,7 @@ footer p {
 }
 
 footer section {
-    height: 180px;
+    height: var(--footer-height);
     display: grid;
     place-items: center;
 }
@@ -618,6 +619,6 @@ footer section {
 }
 
 .cc p {
-    line-height: 180px;
+    line-height: var(--footer-height);
     text-align: right;
 }
