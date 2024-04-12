@@ -9,6 +9,7 @@
     --footer-text: rgba(0, 0, 0, 0.607);
     --box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.018);
     --or-color: rgba(0, 0, 0, 0.502);
+    --radius: 6px;
 }
 
 .container {

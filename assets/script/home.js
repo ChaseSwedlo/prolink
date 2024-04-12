@@ -14,7 +14,7 @@ let imageDataUrl = '';
 let pfp = `<img src='./assets/media/pfp1.jpg' alt="pfp">`;
 
 function buildPost() {
-    let name = `<h3>James</h3>`;
+    let name = `<h3>James Edwards</h3>`;
     const options = { month: 'short', day: '2-digit', year: 'numeric' };
     const date = new Date().toLocaleDateString('en-EN', options);
     let dateHTML = `<p>${date}</p>`;

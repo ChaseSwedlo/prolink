@@ -10,6 +10,7 @@
     --footer-text: rgba(0, 0, 0, 0.607);
     --box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.017);
     --or-color: rgba(0, 0, 0, 0.502);
+    --radius: 6px;
 }
 
 .container {
@@ -79,7 +80,6 @@ header {
 
 nav {
     width: 56%;
-    background-color: rgba(250, 235, 215, 0);
 }
 
 .profile {
@@ -102,7 +102,7 @@ nav {
     font-weight: 500;
 }
 
-figure {
+.pfp-box figure {
     margin-top: -0.1px;
     width: 37px;
     height: 37px;
@@ -152,7 +152,7 @@ figure {
 
 /*Center header nav*/
 nav {
-    padding: 0 40px;
+    padding: 0 42px;
     gap: 10px;
 }
 
@@ -198,8 +198,128 @@ main {
 
 .profile-section {
     width: 26%;
-    height: 80dvh;
-    background-color: blue;
+    height: 498px;
+    position: relative;
+    padding: 20px;
+    background-color: var(--header-color);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
+}
+
+.fa-pen-to-square {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition-duration: 0.2s;
+}
+
+.profile-section i:hover { 
+    opacity: 0.7;
+}
+
+.profile-image {
+    width: 100%;
+}
+
+.profile-image figure {
+    width: 145px;
+    height: 145px;
+    margin-top: 15px;
+    img {
+        border-radius: 50%;
+        border: 1px solid rgba(128, 128, 128, 0.425);
+    }
+}
+
+.profile-section h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 15px;
+    line-height: 1;
+}
+
+.profile-section p {
+    margin-top: 2px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.55;
+}
+
+.profile-section p i {
+    padding-top: 4px;
+    padding-right: 6px;
+    width: 15%;
+}
+
+.counts {
+    width: 100%;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.139);
+}
+
+.counts div {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.connections {
+    border-right: 1px solid rgba(0, 0, 0, 0.201);
+}
+
+.followers h3:first-of-type, .connections h3:first-of-type {
+    font-size: 20px;
+    opacity: 0.8;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.followers h3:last-of-type, .connections h3:last-of-type{
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
+.followers:hover, .connections:hover {
+    opacity: 0.7;
+}
+
+.more-info {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.139);
+}
+
+.button-box {
+    padding: 5px 0;
+}
+
+.profile-section button {
+    background-color: rgb(233, 235, 243);
+    color: var(--main-color);
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 15px;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+}
+
+.profile-section button:hover {
+    opacity: 0.8;
+}
+
+.profile-section button:active {
+    background-color: rgb(221, 223, 228);
 }
 
 .feed {
@@ -209,7 +329,9 @@ main {
 aside {
     width: 26%;
     height: 80dvh;
-    background-color: purple;
+    background-color: var(--header-color);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
 }
 
 textarea {
@@ -217,7 +339,7 @@ textarea {
     resize: none;
     width: 100%;
     height: 220px;
-    border-radius: 6px;
+    border-radius: var(--radius);
     direction: ltr;
     text-align: left;
     color: var(--font-color);
@@ -263,7 +385,7 @@ textarea {
     height: 36px;
     padding: 0 16px;
     font-size: 14px;
-    border-radius: 6px;
+    border-radius: var(--radius);
     transition-duration: 0.2s;
 }
 
@@ -303,7 +425,7 @@ label:active {
 .post {
     width: 100%;
     background-color: rgb(255, 255, 255);
-    border-radius: 6px;
+    border-radius: var(--radius);
     color: rgb(0, 0, 0);
     padding: 15px;
     box-shadow: var(--box-shadow);
@@ -313,7 +435,6 @@ label:active {
     height: 40px;
     background-color: rgb(91, 91, 92);
     border-radius: 50%;
-    border: 1px solid rgba(158, 158, 158, 0.406);
 }
 
 .post-pfp {
@@ -348,6 +469,6 @@ label:active {
 }
 
 .post-img {
-    border-radius: 6px;
+    border-radius: var(--radius);
     margin-top: 8px;
 }
