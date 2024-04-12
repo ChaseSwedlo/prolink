@@ -6,7 +6,20 @@ const postButton = document.querySelector('.post-button');
 const fileInput = document.getElementById('file-input');
 const fileInputLabel = document.querySelector('.file-label');
 const fileName = document.querySelector('.file-name');
-const randomUsers = [];
+const postNameOne = document.querySelector('.init-post-name');
+const postNameTwo = document.querySelector('.init-post-name-two');
+const people = document.querySelector('.people');
+const imgOne = document.querySelector('.one');
+const imgTwo = document.querySelector('.two');
+const imgList = [imgOne, imgTwo];
+const postList = [postNameOne, postNameTwo];
+const userNames = [];
+const options = {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/JSON; charset=UTF-8' },
+    mode: 'cors'
+}
+const URL = 'https://randomuser.me/api/?nat=CA&results=12&seed=same';
 let postTitle = '';
 let postContent = '';
 let post = '';
@@ -43,6 +56,46 @@ function clear() {
     fileInput.value = '';
 }
 
+function saveUsersNames(users) {
+    let count = 0;
+    for(let i = 0; i < users.length; i++) {
+        if(i < 2) {
+            postList[count].innerText = `${users[i].name.first} ${users[i].name.last}`;
+            imgList[count].innerHTML = `<img src=${users[i].picture.medium} alt="pfp">` + imgList[count].innerHTML;
+            count++;
+        }
+        else { buildPerson(users[i]); }
+    }
+}
+
+async function getUsers(endpoint) {
+    try {
+        const result = await fetch(URL, options);
+        if(!result.ok) {
+            throw new Error(`${result.statusText} (${result.status})`);
+        }
+        const data = await result.json();
+        saveUsersNames(data.results);
+    } catch(error) {
+        console.log(error.message);
+    }
+}
+getUsers(URL);
+
+function buildPerson(person) {
+    let html = `
+        <div class="person">
+            <img src=${person.picture.medium}>
+            <div class="person-text">
+                <h4>${person.name.first} ${person.name.last}</h5>
+                <p>${person.location.city}</p>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+        </div>
+    `;
+    people.innerHTML += html;
+}
+
 postButton.addEventListener('click', () => {
     buildPost();
     let current = feed.innerHTML;
@@ -60,62 +113,3 @@ fileInput.addEventListener('change', (event) =>{
     };
     reader.readAsDataURL(file);
 });
-
-const userNames = [];
-const postNameOne = document.querySelector('.init-post-name');
-const postNameTwo = document.querySelector('.init-post-name-two');
-const imgOne = document.querySelector('.one');
-const imgTwo = document.querySelector('.two');
-const imgList = [imgOne, imgTwo];
-const postList = [postNameOne, postNameTwo];
-function saveUsersNames(users) {
-    console.log(users);
-    let count = 0;
-    for(let i = 0; i < users.length; i++) {
-        if(i < 2) {
-            postList[count].innerText = `${users[i].name.first} ${users[i].name.last}`;
-            imgList[count].innerHTML = `<img src=${users[i].picture.medium} alt="pfp">` + imgList[count].innerHTML;
-            count++;
-        }
-        else
-            buildPerson(users[i]);
-    }
-}
-
-const options = {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/JSON; charset=UTF-8' },
-    mode: 'cors'
-}
-
-const URL = 'https://randomuser.me/api/?nat=CA&results=12&seed=same';
-async function getUsers(endpoint) {
-    try {
-        const result = await fetch(URL, options);
-        if(!result.ok) {
-            throw new Error(`${result.statusText} (${result.status})`);
-        }
-        const data = await result.json();
-        console.log(data.results);
-        saveUsersNames(data.results);
-    } catch(error) {
-        console.log(error.message);
-    }
-}
-getUsers(URL);
-
-const people = document.querySelector('.people');
-
-function buildPerson(person) {
-    let html = `
-        <div class="person">
-            <img src=${person.picture.medium}>
-            <div class="person-text">
-                <h4>${person.name.first} ${person.name.last}</h5>
-                <p>${person.location.city}</p>
-            </div>
-            <i class="fa-solid fa-plus"></i>
-        </div>
-    `;
-    people.innerHTML += html;
-}

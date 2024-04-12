@@ -3,6 +3,10 @@
 const username = document.querySelector('.username');
 const password = document.querySelector('.password');
 const login = document.querySelector('.login-button');
+const error = document.querySelector('.incorrect');
+const google = document.querySelector('.google');
+const facebook = document.querySelector('.facebook');
+const email = document.querySelector('.email');
 
 function setCredentials() {
     localStorage.setItem('username', 'user');
@@ -11,36 +15,29 @@ function setCredentials() {
 setCredentials();
 
 function checkCredentials() {
-    let validUser = false;
-    let validPassword = false;
-    if(username.value === localStorage.getItem('username')) {
-        validUser = true;
-        username.style.borderColor = 'rgba(0, 0, 0, 0.1)';
-    }
-    else {
-        validUser = false;
-        username.style.borderColor = 'rgba(255, 10, 10, 0.2)';
-    }
-    if(password.value === localStorage.getItem('password')) {
-        validPassword = true;
-        password.style.borderColor = 'rgba(0, 0, 0, 0.1)';
-    }
-    else {
-        validPassword = false;
-        password.style.borderColor = 'rgba(255, 10, 10, 0.2)';
-    }
-    if(validPassword && validUser) {
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
+    const isUsernameValid = username.value === storedUsername;
+    username.style.borderColor = isUsernameValid ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 10, 10, 0.2)';
+    const isPasswordValid = password.value === storedPassword;
+    password.style.borderColor = isPasswordValid ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 10, 10, 0.2)';
+    if (isUsernameValid && isPasswordValid) {
         changePage();
-    }
+        error.style.opacity = 0;
+    } else { error.style.opacity = 1; }
 }
 
 function changePage() {
     username.value = '';
     password.value = '';
-    setInterval(() => { window.location.replace('home.html'); }, 400);
+    setInterval(() => { window.location.replace('home.html'); }, 460);
 }
 
 login.addEventListener("click", (event) => {
     event.preventDefault();
     checkCredentials();
 });
+
+email.addEventListener("click", event => { event.preventDefault(); });
+google.addEventListener("click", event => { event.preventDefault(); });
+facebook.addEventListener("click", event => { event.preventDefault(); });

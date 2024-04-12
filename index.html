@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Chase Swedlo">
-        <meta name="description" content="ProLink">
+        <meta name="description" content="ProLink Login">
         <meta name="keywords" content="html, css, web, web development">
         <title>ProLink</title>
         <link rel="icon" href="./assets/media/favicon.png" type="image/x-icon">
@@ -18,7 +18,11 @@
     </head>
     <body>
         <main>
-            <section></section>
+            <section>
+                <div class="logo">
+                    <h1>PL</h1>
+                </div>
+            </section>
             <section class="login">
                 <div class="container">
                     <div class="center">
@@ -27,15 +31,16 @@
                             <input type="text" class="username" placeholder="Email or username">
                             <input type="text" class="password" placeholder="Password">
                             <button class="login-button">Log in</button>
+                            <p class="incorrect">Incorrect username and/or password</p>
                             <div class="or flex">
                                 <div class="line"></div>
-                                <p>Or authorize with</p>
+                                <p>Or sign up with</p>
                                 <div class="line"></div>
                             </div>
                             <div class="other flex">
                                 <button class="google"><i class="fa-brands fa-google"></i></button>
                                 <button class="facebook"><i class="fa-brands fa-facebook"></i></button>
-                                <button class="apple"><i class="fa-brands fa-apple"></i></button>
+                                <button class="email"><i class="fa-solid fa-at"></i></button>
                             </div>
                         </form>
                     </div>

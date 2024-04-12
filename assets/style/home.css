@@ -5,11 +5,10 @@
     --header-color: rgb(253, 253, 255);
     --font-color: rgb(0, 0, 3);
     --off-white: rgb(242, 242, 248);
-    --header-height: 65px;
-    --main-color: #0080ff;
+    --header-height: 84px;
+    --main-color: rgb(0, 128, 255);
     --footer-text: rgba(0, 0, 0, 0.607);
     --box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.017);
-    --or-color: rgba(0, 0, 0, 0.502);
     --radius: 6px;
 }
 
@@ -43,17 +42,18 @@ body {
 
 /*header*/
 header {
-    height: 84px;
+    height: var(--header-height);
     background-color: var(--header-color);
 }
 
+/*Logo + search bar*/
 .logo {
     width: 22%;
-    height: 84px;
+    height: var(--header-height);
 }
 
 .logo h1 {
-    line-height: 84px;
+    line-height: var(--header-height);
     color: var(--main-color);
     user-select: none;
     font-size: 32px;
@@ -78,10 +78,7 @@ header {
     color: rgb(159, 160, 163); 
 }
 
-nav {
-    width: 56%;
-}
-
+/*Right side buttons/profile*/
 .profile {
     width: 22%;
     color: rgb(52, 52, 55);
@@ -134,7 +131,7 @@ nav {
 .alert {
     width: 6px;
     height: 6px;
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     border-radius: 50%;
     position: absolute;
     top: 11px;
@@ -150,10 +147,15 @@ nav {
     background-color: rgb(224, 223, 232);
 }
 
+.notis:active, .stats:active, .pfp-box:active {
+    background-color: rgb(215, 214, 219);
+}
+
 /*Center header nav*/
 nav {
-    padding: 0 42px;
+    padding: 0 43px;
     gap: 10px;
+    width: 56%;
 }
 
 nav i {
@@ -173,7 +175,11 @@ nav div {
 }
 
 nav div:hover {
-    background-color: rgba(218, 217, 233, 0.452);
+    background-color: rgba(218, 217, 233, 0.45);
+}
+
+nav div:active {
+    background-color: rgba(205, 204, 217, 0.45);
 }
 
 .active {
@@ -193,7 +199,7 @@ nav div:hover {
 
 /*Main*/
 main {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .profile-section {
@@ -218,6 +224,10 @@ main {
 
 .profile-section i:hover { 
     opacity: 0.7;
+}
+
+.profile-section i:active { 
+    opacity: 0.9;
 }
 
 .profile-image {
@@ -269,6 +279,7 @@ main {
     text-align: center;
     cursor: pointer;
     transition-duration: 0.2s;
+    user-select: none;
 }
 
 .connections {
@@ -291,6 +302,10 @@ main {
 
 .followers:hover, .connections:hover {
     opacity: 0.7;
+}
+
+.followers:active, .connections:active {
+    opacity: 0.5;
 }
 
 .more-info {
@@ -376,6 +391,11 @@ aside h2 {
     opacity: 0.7;
 }
 
+.person h4:active {
+    text-decoration: underline;
+    opacity: 0.5;
+}
+
 .person-text p {
     font-size: 11.5px;
     line-height: 1;
@@ -395,6 +415,10 @@ aside h2 {
 
 .person i:hover {
     opacity: 0.6;
+}
+
+.person i:active {
+    opacity: 0.9;
 }
 
 /*Feed*/
@@ -449,7 +473,7 @@ textarea {
 
 .button button {
     background-color: var(--main-color);
-    color: #fff;
+    color: rgb(255, 255, 255);
     height: 36px;
     padding: 0 16px;
     font-size: 14px;
@@ -520,16 +544,23 @@ label:active {
 .post-title p {
     line-height: 40px;
     font-size: 14px;
+    user-select: none;
     color: rgba(0, 0, 0, 0.538)
 }
 
 .post-pfp h3 {
     padding-left: 10px;
     font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .post-pfp p {
     text-align: right;
+}
+
+.post-text {
+    font-size: 15px;
 }
 
 .post + .post {
@@ -539,4 +570,54 @@ label:active {
 .post-img {
     border-radius: var(--radius);
     margin-top: 8px;
+}
+
+/*Footer*/
+
+footer {
+    background-color: rgb(253, 253, 255);
+    height: 180px;
+    width: 100%;
+}
+
+footer p {
+    font-size: 15px;
+    opacity: 0.7;
+    user-select: none;
+}
+
+footer section {
+    height: 180px;
+    display: grid;
+    place-items: center;
+}
+
+.links:first-of-type {
+    margin-right: 60px;
+}
+
+.links p {
+    text-align: left;
+    cursor: pointer;
+}
+
+.links p:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.links p:active {
+    color: var(--main-color);
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.cc {
+    width: 40%;
+    height: 100%;
+}
+
+.cc p {
+    line-height: 180px;
+    text-align: right;
 }
