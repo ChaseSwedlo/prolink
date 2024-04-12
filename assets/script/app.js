@@ -30,7 +30,7 @@ function checkCredentials() {
 function changePage() {
     username.value = '';
     password.value = '';
-    setInterval(() => { window.location.replace('home.html'); }, 460);
+    setInterval(() => { window.location.href = 'home.html'; }, 460);
 }
 
 login.addEventListener("click", (event) => {
